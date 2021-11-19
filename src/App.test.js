@@ -1,10 +1,10 @@
 import React from "react";
 import App from "./App";
 import { configure, shallow, assert } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 
 configure({ adapter: new Adapter() });
-describe('Testing table")', () => {
+describe('Testing table', () => {
   it("Table has eight tr:s", () => {
     const wrapper = shallow(<App />);
     console.log(wrapper.html());

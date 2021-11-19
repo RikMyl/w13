@@ -8,7 +8,7 @@ function App() {
   //see https://www.w3schools.com/jsref/jsref_map.asp
   const arrayOfOptionNames = names.map((name, position)=>{
     //in JSX language you can combine html elements and js variables this way (see {} around variables)
-    return <option value={position}>{name}</option>
+    return <option key={position} value={position}>{name}</option>
   })
   return (
     <div className="App">
