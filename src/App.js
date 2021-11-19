@@ -9,6 +9,7 @@ function App() {
   const arrayOfOptionNames = names.map((name, position)=>{
     //in JSX language you can combine html elements and js variables this way (see {} around variables)
     return <option key={position} value={position}>{name}</option>
+
   })
   return (
     <div className="App">
