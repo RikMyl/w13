@@ -1,26 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-function App() {
-  //here is an exmple how to create an array
-  const names = ["Päivi", "Ghodrat", "Timo"];
-  //here is an example how to use the array above to create an array of option elements
-  //see https://www.w3schools.com/jsref/jsref_map.asp
-  const arrayOfOptionNames = names.map((name, position)=>{
-    //in JSX language you can combine html elements and js variables this way (see {} around variables)
-    return <option key={position} value={position}>{name}</option>
+const App = () => {
+  // Array of weekdays in English starting from Monday
+  const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
-  })
   return (
     <div className="App">
-      See the source code how to convert an array to html elements
-      <hr/>
-      <select>
-        //now we can use the created variable to add the options for select
-        {arrayOfOptionNames}   //again arrayOfOptionNames is a variable so need to be inside {}
-      </select>
+      <table>
+        <thead>
+          <tr>
+            <th>Weekday</th>
+          </tr>
+        </thead>
+        <tbody>
+          {weekdays.map((weekday, index) => (
+            <tr key={index}>
+              <td>{weekday}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
-}
+};
 
 export default App;
